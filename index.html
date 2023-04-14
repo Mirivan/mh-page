@@ -1,50 +1,114 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<title>MaterialHunter</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="./assets/styles.css">
-		<link rel="icon" type="image/x-icon" href="./assets/src/ic_launcher.png">
-	</head>
-	<body>
-		<main class="main">
-			<h1>What is this?</h1>
-			<h3>Remastered Kali NetHunter app with <a class="designed" href="https://m3.material.io/">Material You Design</a></h3>
-			<h2 id="features" style="margin-top: 36px;">Features</h2>
-			<ul class="features">
-				<li>Fresh and nice design (Monet included)</li>
-				<li>Full compatibility with new versions of Android</li>
-				<li>Improved Chroot Manager (there is no chance to lose personal data from the sdcard partition, smarter installation, the ability to install chroot in a directory you specify, etc.)</li>
-				<li>Integration with Termux and NetHunter Terminal</li>
-				<li>In the future - the implementation of hidden attacks, the ability to modify the system for attacks</li>
-				<li>We accept your ideas for implementation <a class="designed" href="https://github.com/Mirivan/material_hunter/discussions/3">here</a></li>
-			</ul>
-			<h2 id="screenshots" style="margin-top: 36px;">Screenshots</h2>
-			<a href="./assets/src/screenshot (3).jpg" target="_blank"><img class="image-near-center" src="./assets/src/screenshot (3).jpg"></a>
-			<a href="./assets/src/screenshot (1).jpg" target="_blank"><img class="image-in-center" src="./assets/src/screenshot (1).jpg"></a>
-			<a href="./assets/src/screenshot (2).jpg" target="_blank"><img class="image-near-center" src="./assets/src/screenshot (2).jpg"></a>
-			<h2 id="download" style="margin-top: 36px;">Download</h2>
-			<h4>You can download latest version <a class="designed" href="https://github.com/Mirivan/material_hunter/releases/download/5.0/app-release.apk" target="_blank">here</a></h4>
+<!DOCTYPE html>
+<html lang="en" translate="no">
+    <head>
+        <meta charset="UTF-8">
+        <title>MaterialHunter</title>
+        <link rel="stylesheet" href="./src/styles.css">
+        <script src="./src/script.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="./src/ic_launcher.png">
+    </head>
+    <body>
+        <nav id="navigation-drawer">
+            <div class="navigation-view">
+                <div class="closeNav" onclick="closeNav()">
+                    <span class="material-symbols-outlined">
+                        arrow_back
+                    </span>
+                    Menu
+                </div>
+                <div class="navigation-view-item" onclick="location.href='#about'; closeNav()">
+                    About
+                </div>
+                <div class="navigation-view-item" onclick="location.href='#features'; closeNav()">
+                    Features
+                </div>
+                <div class="navigation-view-item" onclick="location.href='#screenshots'; closeNav()">
+                    Screenshots
+                </div>
+                <div class="navigation-view-item" onclick="location.href='#download'; closeNav()">
+                    Download
+                </div>
+                <div class="navigation-view-item" onclick="location.href='#used-resources'; closeNav()">
+                    Used resources
+                </div>
+            </div>
+        </nav>
+        <header id="toolbar">
+            <div class="open-navigation-drawer" onclick="openNav()">
+                <span class="material-symbols-outlined">
+                    menu
+                </span>
+                Menu
+            </div>
+            <div class="toolbar-item">
+                <img src="./src/ic_launcher.png" width="36px" height="36px">
+            </div>
+            <div class="toolbar-item" onclick="location.href='#about'">
+                About
+            </div>
+            <div class="toolbar-item" onclick="location.href='#features'">
+                Features
+            </div>
+            <div class="toolbar-item" onclick="location.href='#screenshots'">
+                Screenshots
+            </div>
+            <div class="toolbar-item" onclick="location.href='#download'">
+                Download
+            </div>
+            <div class="toolbar-item" onclick="location.href='#used-resources'">
+                Used resources
+            </div>
+        </header>
+        <main id="main">
+                <h1 id="about">What is this?</h1>
+                <h3>Remastered Kali NetHunter app with <a href="https://m3.material.io/">Material You Design</a></h3>
+                <h3>Author: TMayfine</h3>
+                <h3 id="latest-version">Latest version: </h3>
+                <h2 id="features" style="margin-top: 36px;">Features</h2>
+                <div class="card-view">
+                    <ul class="features">
+                        <li>Fresh and nice design (Monet included)</li>
+                        <li>Full compatibility with new versions of Android</li>
+                        <li>Improved Chroot Manager (there is no chance to lose personal data from the sdcard partition, smarter installation, the ability to install chroot in a directory you specify, etc.)</li>
+                        <li>Integration with Termux and NetHunter Terminal</li>
+                        <li>In the future - the implementation of hidden attacks, the ability to modify the system for attacks</li>
+                        <li>We accept your ideas for implementation <a class="designed" href="https://github.com/Mirivan/material_hunter/discussions/3">here</a></li>
+                    </ul>
+                </div>
+                <h2 id="screenshots" style="margin-top: 72px;">Screenshots</h2>
+            <div class="card-view">
+                <div class="image-carousel">
+                    <div id="slide-number"></div>
+                    <div class="slide be-fade">
+                        <img id="slide-image">
+                    </div>
+                    <div class="previous-slide" onclick="previousSlide()">
+                        <span class="material-symbols-outlined">
+                            navigate_before
+                        </span>
+                    </div>
+                    <div class="next-slide" onclick="nextSlide()">
+                        <span class="material-symbols-outlined">
+                            navigate_next
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <h2 id="download" style="margin-top: 72px;">Download</h2>
+			<h3>You can download latest version: <a id="download-url" target="_blank">here</a></h3>
 			<div class="enter-first">
 				<a href="https://materialhunterapp.t.me/" rel="nofollow">
 					<img src="https://img.shields.io/badge/Channel-%2326A5E4?style=for-the-badge&amp;logo=telegram">
 				</a>
 				<img src="https://img.shields.io/github/repo-size/mirivan/material_hunter?style=for-the-badge">
 			</div>
-			<h2 style="margin-top: 36px;">Used resources</h2>
-			<ul class="features">
-				<li><a class="designed" href="https://github.com/IdreesInc/Monocraft" target="_blank">Monocraft font</a></li>
-				<li><a class="designed" href="https://shields.io/" target="_blank">shields.io badges</a></li>
-			</ul>
-		</main>
-		<div class="bottom-navigation-layout">
-			<nav class="bottom-navigation">
-				<a href="./index.html">Home</a>
-				<a href="#features">Features</a>
-				<a href="#download">Download</a>
-				<a href="https://github.com/mirivan/material_hunter" target="_blank">GitHub</a>
-			</nav>
-		</div>
-	</body>
-<html>
+        </main>
+        <footer id="used-resources">
+            <p>Used resources: <a href="https://fonts.google.com/">#googlefonts</a></p>
+        </footer>
+    </body>
+    <script>
+        window.onload = main()
+    </script>
+</html>
