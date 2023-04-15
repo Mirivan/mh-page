@@ -30,13 +30,13 @@ html {
 body {
     margin: 0;
     height: 100%;
-    background: linear-gradient(320deg, #121212, #181818, #242424, #303030, #363636);
+    background: linear-gradient(320deg, #121212, #202020, #282828);
     background-size: 900% 900%;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     font-family: 'Open Sans', sans-serif;
-    animation: backgroundAnimation 5s ease infinite;
+    animation: backgroundAnimation 10s ease infinite;
     color: whitesmoke;
 }
 
@@ -79,16 +79,20 @@ nav .navigation-view {
 }
 
 .closeNav span {
-    margin-right: 4px;
+    margin-right: 8px;
     font-size: var(--header-font-size);
 }
 
 .navigation-view .navigation-view-item {
+    display: flex;
+    align-items: center;
     color: whitesmoke;
-    margin: 2px;
     transition: color .5s;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding: 8px 16px 8px 16px;
+}
+
+.navigation-view-item span {
+    margin-right: 8px;
 }
 
 .navigation-view .navigation-view-item:hover,
@@ -107,7 +111,7 @@ header {
     align-items: center;
     padding: 16px;
     background-color: #2c2c2c;
-    font-size: var(--header-font-size);
+    font-size: calc(var(--header-font-size) - 6);
 }
 
 header .toolbar-item {
@@ -127,6 +131,7 @@ header .open-navigation-drawer {
     display: none;
     margin-right: 32px;
     transition: color .5s, width .5s;
+    font-size: var(--header-font-size);
     align-items: center;
     cursor: pointer;
 }
@@ -157,12 +162,12 @@ main h2, main h3 {
 
 .card-view {
     display: flex;
-    flex-direction: column;
     width: fit-content;
     padding: 24px;
     background-color: #363636;
     border-radius: 14px;
     transition: box-shadow .5s, transform .5s;
+    align-items: center;
 }
 
 .card-view:hover {
@@ -209,39 +214,38 @@ main .image-carousel {
 .slide img {
     height: 540px;
     object-fit: contain;
+    border-radius: 5px;
 }
 
-.image-carousel .previous-slide, .image-carousel .next-slide {
+.card-view .previous-slide, .card-view .next-slide {
     display: flex;
-    position: absolute;
-    top: 50%;
+    position: relative;
     margin-top: -22px;
     cursor: pointer;
     padding: 16px;
-    font-weight: bold;
     border-radius: 50%;
     user-select: none;
 }
 
-.image-carousel .previous-slide {
-    margin-left: 2px;
+.card-view .previous-slide {
+    margin-right: 8px;
 }
 
-.image-carousel .next-slide {
-    right: 0;
-    margin-right: 2px;
+.card-view .next-slide {
+    margin-left: 8px;
 }
 
 .previous-slide span, .next-slide span {
     font-size: 18px;
 }
 
-.image-carousel .previous-slide:hover, .image-carousel .next-slide:hover {
+.card-view .previous-slide:hover, .card-view .next-slide:hover {
     background-color: #2c2c2c;
 }
 
 #slide-number {
     font-size: 12px;
+    user-select: none;
     padding: 8px;
     position: absolute;
     top: 0;
@@ -277,5 +281,9 @@ footer {
 
     header .toolbar-item {
         display: none;
+    }
+
+    .card-view {
+        transform: scale(0.9);
     }
 }
