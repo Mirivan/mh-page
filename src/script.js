@@ -3,7 +3,7 @@ function openNav() {
 }
   
 function closeNav() {
-    document.getElementById("navigation-drawer").style = "";
+    document.getElementById("navigation-drawer").style.width = "0";
     
 }
 
